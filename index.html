@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달빛 (DALBIT) | 가장 우아한 미식 팔레트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    
+    <script>
+        // Tailwind Custom Configuration (색상 및 폰트 설정)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#0a0a0a',
+                        moonlight: '#d4af37',
+                        surface: '#171717',
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif KR"', 'serif'],
+                        sans: ['Pretendard', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 부드러운 스크롤 및 기본 설정 */
+        html { scroll-behavior: smooth; }
+        body { background-color: #0a0a0a; color: #f4f4f5; }
+        
+        /* 등장 애니메이션 */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 절개선(Line) 디자인 */
+        .divider-line {
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #d4af37, transparent);
+        }
+        
+        /* 인터랙티브 탭 트랜지션 */
+        .tab-content { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full top-0 z-50 bg-midnight/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="font-serif text-2xl font-semibold tracking-widest text-moonlight">달빛 <span class="text-sm text-gray-400 font-sans">DALBIT</span></h1>
+            <div class="hidden md:flex space-x-8 text-sm font-light text-gray-300">
+                <a href="#brand" class="hover:text-moonlight transition">브랜드 스토리</a>
+                <a href="#palette" class="hover:text-moonlight transition">달빛 팔레트</a>
+                <a href="#ritual" class="hover:text-moonlight transition">미식 경험</a>
+            </div>
+            <a href="#gift" class="px-5 py-2 text-xs font-semibold bg-moonlight text-midnight rounded hover:bg-yellow-500 transition tracking-wider">알림 신청</a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center text-center px-6 pt-20">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface via-midnight to-midnight -z-10"></div>
+        <div class="max-w-3xl fade-in-up">
+            <p class="text-moonlight text-sm tracking-[0.3em] mb-6 uppercase">Share the Moonlight</p>
+            <h2 class="font-serif text-5xl md:text-7xl font-light leading-tight mb-8">
+                달빛 아래,<br>당신의 취향을 빚다.
+            </h2>
+            <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-12">
+                보름달 속 토끼가 절구를 찧던 오랜 상상력에서 출발해,<br class="hidden md:block">
+                한국의 맛을 오늘의 방식으로 다시 빚습니다.
+            </p>
+            <a href="#palette" class="inline-block border border-moonlight/50 text-moonlight px-8 py-4 rounded-full hover:bg-moonlight hover:text-midnight transition duration-300">
+                가장 우아한 디저트 만나보기 ↓
+            </a>
+        </div>
+    </section>
+
+    <section id="palette" class="py-32 px-6 bg-surface">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20 fade-in-up">
+                <h2 class="font-serif text-4xl text-white mb-4">식탁 위의 작은 미술관, 달빛 팔레트</h2>
+                <p class="text-gray-400 font-light">6x4cm의 캔버스 위에 고소함을 바르며 나만의 미식을 완성하세요.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-midnight border border-white/5 p-8 rounded-xl hover:border-moonlight/30 transition duration-300 fade-in-up delay-200 group">
+                    <h3 class="font-serif text-xl text-moonlight mb-2">THE CANVAS</h3>
+                    <h4 class="text-white text-lg mb-4">페이스트리 모약과</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        한 입에 우아하게 들어가는 6x4cm 황금비율. 수십 겹의 결이 살아있는 겉바속쫀 페이스트리 식감으로, 손에 끈적임이 묻지 않도록 프리미엄 유산지에 담아냈습니다.
+                    </p>
+                </div>
+                <div class="bg-midnight border border-white/5 p-8 rounded-xl hover:border-moonlight/30 transition duration-300 fade-in-up delay-400">
+                    <h3 class="font-serif text-xl text-moonlight mb-2">THE COLORS</h3>
+                    <h4 class="text-white text-lg mb-4">수제 저당 스프레드</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        약과의 단맛은 비우고, 원물의 풍미를 채웠습니다. 칠흑 같은 볶은 흑임자와 포근한 달빛을 닮은 인절미 스프레드를 취향껏 펴 발라 보세요.
+                    </p>
+                </div>
+                <div class="bg-midnight border border-white/5 p-8 rounded-xl hover:border-moonlight/30 transition duration-300 fade-in-up delay-200">
+                    <h3 class="font-serif text-xl text-moonlight mb-2">THE TOOL</h3>
+                    <h4 class="text-white text-lg mb-4">달토끼 스패출러</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        전통 절구공이를 모티브로 유려하게 깎아낸 미니 우드 스패출러. 단순히 먹는 것을 넘어, 당신의 손끝에서 예술 같은 디저트가 완성됩니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ritual" class="py-32 px-6 border-t border-b border-white/5">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            
+            <div class="w-full md:w-1/2">
+                <h2 class="font-serif text-4xl text-white mb-6">The Ritual of Taste</h2>
+                <p class="text-gray-400 font-light mb-12">당신만의 달빛을 완성하는 3단계 미식 경험</p>
+                
+                <div class="flex flex-col space-y-4 relative">
+                    <div class="absolute left-[1.3rem] top-8 bottom-8 divider-line"></div>
+                    
+                    <button onclick="showStep(1)" id="btn-1" class="step-btn flex items-center text-left opacity-100 transition duration-300">
+                        <span class="w-11 h-11 rounded-full bg-moonlight text-midnight flex items-center justify-center font-bold mr-6 z-10 text-sm">01</span>
+                        <div>
+                            <h3 class="text-xl font-serif text-moonlight">PICK</h3>
+                            <p class="text-gray-400 text-sm mt-1 font-light">가볍게 들어올리다</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="showStep(2)" id="btn-2" class="step-btn flex items-center text-left opacity-50 hover:opacity-100 transition duration-300">
+                        <span class="w-11 h-11 rounded-full bg-surface border border-moonlight text-moonlight flex items-center justify-center font-bold mr-6 z-10 text-sm">02</span>
+                        <div>
+                            <h3 class="text-xl font-serif text-white">SPREAD</h3>
+                            <p class="text-gray-400 text-sm mt-1 font-light">우아하게 펴 바르다</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="showStep(3)" id="btn-3" class="step-btn flex items-center text-left opacity-50 hover:opacity-100 transition duration-300">
+                        <span class="w-11 h-11 rounded-full bg-surface border border-moonlight text-moonlight flex items-center justify-center font-bold mr-6 z-10 text-sm">03</span>
+                        <div>
+                            <h3 class="text-xl font-serif text-white">TASTE</h3>
+                            <p class="text-gray-400 text-sm mt-1 font-light">결과 향을 음미하다</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 bg-surface rounded-2xl p-10 min-h-[300px] flex items-center border border-white/5 relative overflow-hidden">
+                <div id="content-1" class="tab-content active text-center w-full">
+                    <p class="font-serif text-2xl text-moonlight mb-4">"손에 묻지 않는 깔끔함"</p>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        무광 틴케이스를 열고, 결이 살아있는 약과 바를 유산지 째로 가볍게 들어 올립니다. 끈적임 없이 오직 기대감만 남습니다.
+                    </p>
+                </div>
+                <div id="content-2" class="tab-content text-center w-full">
+                    <p class="font-serif text-2xl text-moonlight mb-4">"빈 캔버스를 채우는 시간"</p>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        달토끼 스패출러로 흑임자 혹은 인절미 스프레드를 덜어내어, 약과 위에 부드럽게 펴 바릅니다. 나만의 색을 얹는 짧은 의식입니다.
+                    </p>
+                </div>
+                <div id="content-3" class="tab-content text-center w-full">
+                    <p class="font-serif text-2xl text-moonlight mb-4">"페이스트리와 원물의 조화"</p>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        바삭하게 부서지는 페이스트리의 결 사이로 고소하고 꾸덕한 스프레드가 스며듭니다. 극강의 밸런스를 오롯이 음미해 보세요.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="gift" class="py-32 px-6 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] bg-midnight">
+        <div class="max-w-4xl mx-auto text-center fade-in-up">
+            <h2 class="font-serif text-5xl text-moonlight mb-6">가장 한국적인 낭만을 선물하세요</h2>
+            <p class="text-gray-400 font-light text-lg mb-12 leading-relaxed">
+                시중의 투박한 간식이 아닙니다. 캐리어에 쏙 들어가는 콤팩트한 틴케이스,<br>
+                여백의 미를 살린 고급스러운 패키징. 외국인 VIP 바이어, 상견례 다과,<br>
+                그리고 나를 위한 특별한 보상으로 손색없는 완벽한 K-Dessert를 전합니다.
+            </p>
+            <button class="bg-moonlight text-midnight font-bold text-lg px-12 py-5 rounded hover:bg-yellow-500 transition duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                [달빛 팔레트] 첫 공개, 슈퍼 얼리버드 알림 신청
+            </button>
+            <p class="text-sm text-gray-500 mt-6">* 오픈 시크릿 링크와 특별 혜택을 가장 먼저 보내드립니다.</p>
+        </div>
+    </section>
+
+    <footer class="bg-black py-10 text-center border-t border-white/10">
+        <p class="font-serif text-moonlight text-xl tracking-widest mb-4">달빛 <span class="text-sm text-gray-500">DALBIT</span></p>
+        <p class="text-xs text-gray-600 font-light">&copy; 2026 DALBIT. All rights reserved. Share the Moonlight.</p>
+    </footer>
+
+    <script>
+        // 스텝(Ritual) 섹션 인터랙티브 로직
+        function showStep(stepIndex) {
+            // 모든 콘텐츠와 버튼 초기화
+            for(let i=1; i<=3; i++) {
+                document.getElementById('content-' + i).classList.remove('active');
+                let btn = document.getElementById('btn-' + i);
+                let badge = btn.querySelector('span');
+                let title = btn.querySelector('h3');
+                
+                // 비활성화 상태 스타일
+                btn.classList.remove('opacity-100');
+                btn.classList.add('opacity-50');
+                badge.classList.remove('bg-moonlight', 'text-midnight');
+                badge.classList.add('bg-surface', 'border', 'border-moonlight', 'text-moonlight');
+                title.classList.remove('text-moonlight');
+                title.classList.add('text-white');
+            }
+            
+            // 선택된 스텝 활성화
+            document.getElementById('content-' + stepIndex).classList.add('active');
+            let activeBtn = document.getElementById('btn-' + stepIndex);
+            let activeBadge = activeBtn.querySelector('span');
+            let activeTitle = activeBtn.querySelector('h3');
+            
+            // 활성화 상태 스타일
+            activeBtn.classList.remove('opacity-50');
+            activeBtn.classList.add('opacity-100');
+            activeBadge.classList.remove('bg-surface', 'border', 'border-moonlight', 'text-moonlight');
+            activeBadge.classList.add('bg-moonlight', 'text-midnight');
+            activeTitle.classList.remove('text-white');
+            activeTitle.classList.add('text-moonlight');
+        }
+    </script>
+</body>
+</html>
